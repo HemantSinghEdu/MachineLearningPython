@@ -5,6 +5,15 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+#Uncomment the lines below if python can't find the csv file
+"""
+import os
+currentFile = __file__
+realPath = os.path.realpath(currentFile)
+dirPath = os.path.dirname(realPath)
+dataset = pd.read_csv(dirPath+'/Data.csv')
+"""
+
 #Import dataset 
 dataset = pd.read_csv('Data.csv')
 X = dataset.iloc[:,:-1].values
