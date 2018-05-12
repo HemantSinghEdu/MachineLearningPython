@@ -62,19 +62,25 @@ print('predicted values y_pred\n',y_pred, '\n actual values y_test\n', y_test);
 #-----------------------------------GRAPHS--------------------------------
 
 #Plotting the training set results
+print('plotting training data on chart')
+plt.figure('training')
 plt.scatter(X_train, y_train, color='red')
 plt.plot(X_train, regressor.predict(X_train), color='blue')
 plt.title('Experience vs Salary - Training set')
 plt.xlabel('Experience')
 plt.ylabel('Salary ($)')
 plt.show()
+plt.savefig('train.png')
 
 #Plotting the test set results
+print('plotting test data on chart')
+plt.figure('test')
 plt.scatter(X_test, y_test, color='red')
 plt.plot(X_train, regressor.predict(X_train), color='blue')
 plt.title('Experience vs Salary - Test set')
 plt.xlabel('Experience')
 plt.ylabel('Salary')
 plt.show()
+plt.savefig('test.png')
 
 #------------------------------------END----------------------------------
