@@ -1,4 +1,4 @@
-#Simple Linear Regression
+#Simple Linear Regression - one feature column, one label column
 #sourced from - superdatascience.com
 
 #----------------------------- Data Preprocessing -------------------
