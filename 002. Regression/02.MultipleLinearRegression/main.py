@@ -47,6 +47,31 @@ regressor = regressor.fit(X,y)
 #predict test set results
 y_pred = regressor.predict(X_test)
 print('y_pred for X_test\n',y_pred)
+
+#Building the optimal model using backward elimination
+#One by one, remove all columns that have a p-value above 0.05 significance level
+import statsmodels.formula.api as sm
+X = np.append(arr=np.ones((50,1)).astype(int), values=X, axis=1) #add a column of 1's, the bias term in the equation of line
+
+#Iteration #1
+X_opt = X[:,[0,1,2,3,4,5]]    #initially, we add all columns to X_optimal
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()  #P-values: x1=0.948, x2=0.777, x3=0.000, x4=0.943, x5=0.056
+
+#Iteration #2 - remove column with highest p-value i.e. x1 (second column) 
+X_opt = X[:,[0,2,3,4,5]]      
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()  #P-values: x1=0.769, x2=0.000, x3=0.944, x4=0.050
+
+#Iteration #4 - remove column with highest p-value i.e. x3 (fourth column)
+X_opt = X[:,[0,2,4,5]]
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()  #P-values: x1=0.610, x2=0.010, x3=0.000
+
+#Iteration #5 - remove column with highest p-value i.e. x1 (second column)
+X_opt = X[:,[0,4,5]]
+regressor_OLS = sm.OLS(endog=y, exog=X_opt).fit()
+regressor_OLS.summary()  #P-values: x1 = 0.009, x2=0.000
 #-------------------------------------END------------------------------
 
 
