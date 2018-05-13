@@ -11,6 +11,6 @@ Create a new repls for Python
 Each repls will represent one folder of this project
 Once a repls is created, main.py will already be created for you
 Copy code from the current folder's main.py into the repls main.py
-Add a new file and copy the csv file's content
+Add a new file "Data.csv" in repl.it, and copy the csv file's content to it
 
 Now click on run in the repls. The code should run fine
