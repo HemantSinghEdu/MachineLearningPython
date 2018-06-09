@@ -77,7 +77,8 @@ regressor_OLS.summary()  #P-values: x1 = 0.009, x2=0.000
 
 #----------------------------------- Graphs ---------------------------
 #Since there are multiple features, we can't show a feature vs . label graph
-#For now, we will show the predicted vs. actual value graph
+#You can use Principal Component Analysis (PCA) or LDA to reduce the number of features
+#But for now, we will just show the predicted vs. actual value graph
 
 #Predicted vs. actual graph for training set
 y_pred_train = regressor.predict(X_train)
