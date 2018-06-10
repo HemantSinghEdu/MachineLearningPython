@@ -1,4 +1,5 @@
 #Multiple Linear Regression - multiple features, one label
+#General Equation is that of a straight line with multiple features: y = b0 + b1x1 + b2x2 + ... + bnxn
 #sourced from superdatascience.com
 
 #-------------------------------- Preprocessing -----------------------

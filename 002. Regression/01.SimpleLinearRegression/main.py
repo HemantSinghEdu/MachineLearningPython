@@ -1,4 +1,5 @@
 #Simple Linear Regression - one feature column, one label column
+#General Equation is that of a straight line: y = b0 + b1x
 #sourced from - superdatascience.com
 
 #----------------------------- Data Preprocessing -------------------
