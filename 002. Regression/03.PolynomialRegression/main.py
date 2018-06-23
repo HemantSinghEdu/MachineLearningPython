@@ -1,6 +1,5 @@
-#Polynomial Linear Regression - used when data cannot be fit by a straight line
-#but by a curve
-#General Equation is of a polynomial curve: y = b0 + b1x1 + b2 x1^2  + b3 x1^3 + ... + bn x1^n
+#Polynomial Linear Regression - used when data cannot be fit by a straight line, but by a curve
+#General Equation is of a polynomial curve: y = b0 + b1 x1 + b2 x1^2  + b3 x1^3 + ... + bn x1^n
 #sourced from superdatascience.com
 
 #-------------------------------- Preprocessing -----------------------
@@ -17,7 +16,8 @@ y = dataset.iloc[:,2].values.reshape(-1,1)
 print("features X \n",X,"\n labels y \n",y)
 
 #handle missing data
-""" not needed as there is no missing data
+#not needed as there is no missing data
+"""
 from sklearn.preprocessing import Imputer
 imputer = Imputer()
 imputer = imputer.fit(X[:,0:2])  #handle only first two columns
@@ -26,7 +26,8 @@ print("X after handling missing data",X)
 """
 
 #Encode categorical data
-"""not needed as X does not have any categorical data
+#not needed as X does not have any categorical data
+"""
 from sklearn.preprocessing import LabelEncoder,OneHotEncoder
 labelEncoder = LabelEncoder()
 X[:,0] = labelEncoder.fit_transform(X[:,0])
@@ -37,13 +38,15 @@ print("X after encoding categorical data", X)
 """
 
 #Splitting the dataset into training and test set
-"""not needed as the data set is too small this time
+#not needed as the data set is too small this time
+"""
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.2)
 """
  
 #Feature Scaling
-"""not needed as LinearRegression class internally scales the features
+#not needed as LinearRegression class internally scales the features
+"""
 from sklearn.preprocessing import StandardScaler
 sc_X = StandardScaler()
 X_train = sc_X.fit_transform(X_train)
@@ -55,9 +58,8 @@ X_test = sc_X.transform(X_test)
 #------------------------------------ Model ---------------------------
 
 #Fitting polynomial regression to the dataset
-#Model Selection
-#We will iterate the degree of polynomial features until we get a best-fit model
-
+    #Model Selection
+        #We will iterate the degree of polynomial features until we get a best-fit model
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 
