@@ -39,7 +39,7 @@ y_pred = sc_y.inverse_transform(y_pred) #get the unscaled value
 
 #----------------------------------- Graphs ---------------------------
 
-#Visualizing the SVR resuts
+#Visualizing the SVR results
 plt.scatter(X,y,color='red')
 plt.plot(X, regressor.predict(X), color='blue')
 plt.title("Truth or bluff (SVR)")
